@@ -85,7 +85,6 @@ def message_student(student_name, students_info, message):
     send_message(student_name, message, p_no, service)
     return 
 
-@st.cache_data
 def send_circular_ui():
     st.header("Send Circular")
     img = st.file_uploader('Upload Circular (jpg or png)')
@@ -103,8 +102,7 @@ def send_circular_ui():
                 st.success(f"Successfully Sent Circular to Parents for Semester {semester_no}")
             except Exception as e:
                 st.error(f"Error Sending Circular: {str(e)}")
-
-@st.cache_data      
+      
 def send_message_ui():
     st.header("Message a Parent")
     students_file = st.file_uploader("Select the File for Students' Information: ")
