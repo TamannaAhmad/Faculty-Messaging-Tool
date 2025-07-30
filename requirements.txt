@@ -1,6 +1,6 @@
 pandas
 streamlit
 PyWhatKit
-Twilio
+
 pywin32
 requests
