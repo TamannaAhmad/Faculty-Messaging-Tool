@@ -2,5 +2,4 @@ pandas == 2.2.3
 streamlit == 1.44.1
 PyWhatKit == 5.4
 Twilio == 9.3.8
-pywin32 == 310
 requests == 2.32.3
