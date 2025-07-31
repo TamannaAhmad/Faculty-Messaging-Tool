@@ -8,7 +8,7 @@ from twilio.rest import Client
 def send_whatsapp_image(image, students_info):
     data = pd.read_csv(students_info)
     for i in data.index:
-        p_no = "+91" + str(data.loc[i, ['Parent Phone Number']].item())
+        p_no = "+91" + str(data.loc[i, ['Phone Number']].item())
         try: 
             kit.sendwhats_image(p_no, image, wait_time = 45, tab_close = True, close_time= 15)
         except Exception as e:
@@ -59,7 +59,7 @@ def send_ia_marks(marks, students_info):
     for i in df_marks.index: 
         #get each student's information
         name = data.loc[i, ['Student Name']].item()
-        p_no = "+91" + str(data.loc[i, ['Parent Phone Number']].item())
+        p_no = "+91" + str(data.loc[i, ['Phone Number']].item())
         service = data.loc[i, ['Preferred Service']].item()
         student_marks = []
         #add marks of each subject to the list
@@ -76,7 +76,7 @@ def send_ia_marks(marks, students_info):
 def message_student(student_name, students_info, message):
     #read the csv files into dataframes
     df_students_info = pd.read_csv(students_info)
-    p_no = p_no = "+91" + str(df_students_info.loc[df_students_info['Student Name'] == student_name, 'Parent Phone Number'].values[0])
+    p_no = p_no = "+91" + str(df_students_info.loc[df_students_info['Student Name'] == student_name, 'Phone Number'].values[0])
     service = df_students_info.loc[df_students_info['Student Name'] == student_name, 'Preferred Service'].values[0]
     send_message(student_name, message, p_no, service)
     return 
