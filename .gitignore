@@ -2,6 +2,7 @@
 PyWhatKit_DB.txt
 .csv
 data/
+demo.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
